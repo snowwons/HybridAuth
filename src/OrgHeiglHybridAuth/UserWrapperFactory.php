@@ -60,10 +60,7 @@ class UserWrapperFactory
                 return $userProxy;
                 break;
             default:
-                throw new \UnexpectedValueException(sprintf(
-                    'The given Object could not be found. Found "%s" instead',
-                    get_Class($userObject)
-                ));
+                return new DummyUserWrapper();
         }
         throw new \UnexpectedValueException('The given Object could not be found');
         return false;

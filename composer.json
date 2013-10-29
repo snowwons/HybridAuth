@@ -17,6 +17,9 @@
         "zendframework/zendframework": ">=2.1,<2.3.x-dev",
         "hybridauth/hybridauth": "3.0.0.*@dev"
     },
+    "require-dev" : {
+        "mockery/mockery": "dev-master"
+    },
     "autoload" : {
         "psr-0" : {
             "OrgHeiglHybridAuth" : "src"

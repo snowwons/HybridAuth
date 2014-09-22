@@ -46,12 +46,13 @@ class UserProxyFactoryTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceof('\OrgHeiglHybridAuth\UserInterface', $obj);
     }
 
+    /**
+     * @expectedException \UnexpectedValueException
+     */
     public function testCreationWithUnknownUserObject()
     {
         $factory = new UserWrapperFactory();
-        $userObj = $this->getMock('Hybridauth\\Entity\\Profile');
-        $obj = $factory->factory($userObj);
-        $this->assertInstanceof('\OrgHeiglHybridAuth\UserInterface', $obj);
-        $this->assertInstanceof('\OrgHeiglHybridAuth\DummyUserWrapper', $obj);
+        $userObj = new \ArrayObject();
+        $factory->factory($userObj);
     }
 }
